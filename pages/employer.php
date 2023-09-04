@@ -7,7 +7,7 @@
     <script src="https://kit.fontawesome.com/e9f64432b6.js" crossorigin="anonymous"></script>
     <title>Employer</title>
   </head>
-  <body>
+  <body class="bg-light" >
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand text-primary mx-2" style="font-size:30px; font-weight:bold;" href="index.php">Company</a>
@@ -39,22 +39,16 @@
         </div>
     </nav>
 
-    <form>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+    <!-- job creation -->
+    <div class="container my-3">
+        <form>
+            <div class="form-group">
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="What kind of job or service do you need?" ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary my-3"><i class="fa-solid fa-paper-plane"></i>  Create Post</button>
+        </form>
+    </div>
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>
