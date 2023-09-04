@@ -7,7 +7,7 @@
     <script src="https://kit.fontawesome.com/e9f64432b6.js" crossorigin="anonymous"></script>
     <title>Employer</title>
   </head>
-  <body class="bg-light" >
+  <body class="bg-light" style="font-size:25px;">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand text-primary mx-2" style="font-size:30px; font-weight:bold;" href="index.php">Company</a>
@@ -47,6 +47,32 @@
             </div>
             <button type="submit" class="btn btn-primary my-3"><i class="fa-solid fa-paper-plane"></i>  Create Post</button>
         </form>
+    </div>
+
+    <div class="container">
+        <hr>
+        <h2 class="text-center" >List of applicants</h2>
+
+        <ul class="list-group"  >
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                A list item
+                <span class="badge bg-primary rounded-pill">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                A second list item
+                <span class="badge bg-primary rounded-pill">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                A third list item
+                <span class="badge bg-primary rounded-pill">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </span>
+            </li>
+        </ul>
     </div>
    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
