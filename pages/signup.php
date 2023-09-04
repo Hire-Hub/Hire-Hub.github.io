@@ -10,35 +10,60 @@
     <h1 class="text-center my-3" >Sign Up</h1>
 
     <div class="container">
-    <nav>
-        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Employer</button>
-            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Student</button>
-        </div>
-    </nav>
-    <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-        <form class="my-3" >
-            <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" name="name" aria-describedby="emailHelp" placeholder="enter name">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Employer</button>
+                <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Student</button>
             </div>
-            <div class="mb-3">
-                <label class="form-label">Phone Number</label>
-                <input type="number" class="form-control" name="mobile" placeholder="enter phone number">
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Password</label>
-                <input type="password" class="form-control" name="password" placeholder="enter password">
+        </nav>
+        <div class="tab-content">
+            <!-- employer creation -->
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <form class="my-3" action="signup.php" method="post" >
+                 <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" name="name" aria-describedby="emailHelp" placeholder="enter name">
+                </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Company Name</label>
+                    <input type="text" class="form-control" name="companyname" aria-describedby="emailHelp" placeholder="enter company name">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Phone Number</label>
+                    <input type="number" class="form-control" name="mobile" placeholder="enter phone number">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="enter password">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Create Account</button>
+                <p class="my-2" >Already have an account? <a href="login.php">Click Here</a></p>
+            </form>
             </div>
 
-            <button type="submit" class="btn btn-primary">Create Account</button>
-        </form>
+            <!-- student creation -->
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <form class="my-3" action="signup.php" method="post" >
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" name="name" aria-describedby="emailHelp" placeholder="enter name">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Phone Number</label>
+                    <input type="number" class="form-control" name="mobile" placeholder="enter phone number">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="enter password">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Create Account</button>
+                <p class="my-2" >Already have an account? <a href="login.php">Click Here</a></p>
+
+            </form>
+            </div>
         </div>
-        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-            
-        </div>
-    </div>
     </div>
 
 
