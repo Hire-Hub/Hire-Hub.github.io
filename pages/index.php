@@ -42,42 +42,93 @@
 
     <!-- services section -->
     <div class="container">
-        <div class="row">
-        <div class="col-4">
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa maxime minima qui facere non commodi. Esse qui quidem inventore aspernatur.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h2 class="text-center my-2" >Our Services</h2>
+            <div class="row">
+              <!-- Student Cards -->
+              <div class="col-md-4">
+                <div class="card mb-4">
+                  <img src="../images/button1.jpg" class="card-img-top" alt="Profile Picture">
+                  <div class="card-body">
+                    <h5 class="card-title">Internship and Job getaway</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias officiis, in amet laboriosam impedit fugiat id unde adipisci consequatur maiores!</p>
+                    <!-- <a href="../intern-profile/profile.html">
+                      <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalJohnDoe">View Profile</button>
+                    </a> -->
+                  </div>
                 </div>
-            </div>
-        </div>
-   
-        <div class="col-4">
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa maxime minima qui facere non commodi. Esse qui quidem inventore aspernatur.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
+              </div>
 
-        <div class="col-4">
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa maxime minima qui facere non commodi. Esse qui quidem inventore aspernatur.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+              <div class="col-md-4">
+                <div class="card mb-4">
+                  <img src="../images/download 1.jpg" class="card-img-top" alt="Profile Picture">
+                  <div class="card-body">
+                    <h5 class="card-title">Website Design</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita sit, fugiat accusamus vitae eveniet omnis?</p>
+                   <!-- <a href="../intern-profile/profile.html">
+                     <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalJohnDoe">View Profile</button>
+                   </a> -->
+                  </div>
                 </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="card mb-4">
+                  <img src="../images/button3.jpg" class="card-img-top" alt="Profile Picture">
+                  <div class="card-body">
+                    <h5 class="card-title">Job/Internship Posting</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero illo obcaecati omnis optio eaque, quaerat, molestiae</p>
+                    <!-- <a href="../intern-profile/profile.html">
+                      <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalJohnDoe">View Profile</button>
+                    </a> -->
+                  </div>
+                </div>
+              </div>
+              <!-- Add more student cards as needed -->
             </div>
+          </div>
+
+    <!-- about section -->
+    <div class="container" id="employer-section">
+        <h2 class="text-center my-2">About Us</h2>
+      <div class="row p-2">
+        <div class="col-md-4" id="image-card">
+          <img src="../images/my intern.jpg" alt="" class="img-fluid m-2">
         </div>
+        <div class="col-md-8">
+          <h2>Why use this platform</h2>
+          <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia molestias, praesentium alias veniam nihil nulla.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia molestias, praesentium alias veniam nihil nulla.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia molestias, praesentium alias veniam nihil nulla.</li>
+          </ul>
         </div>
-     
+      </div>
     </div>
+
+<!-- contact section -->
+<div class="container border rounded mt-5">
+      <div class="text-center">
+          <h2>Get in touch</h2>
+          <p class="lead">Questions? Do not hesitate to contact us</p>
+      </div>
+      <div class="row justify-content-center my-5">
+          <div class="col-lg-6">
+              <form action="">
+                  <label for="query" class="text-center">Write a message</label>
+                  <textarea name="query" id="query" cols="30" rows="10" class="form-control mt-3"></textarea>
+                  <div class="text-center">
+                      <button type="submit" class="btn btn-primary my-3 text-white">Send!</button>
+                  </div>
+                  <div class="text-center">
+                      <p>or Contact Admin through</p>
+                        <a href="#" class="btn btn-outline-primary"> <i class="fa-brands fa-whatsapp"></i> </a>
+                        <a href="#" class="btn btn-outline-primary"> <i class="fa-brands fa-twitter"></i> </a>
+                        <a href="#" class="btn btn-outline-primary"> <i class="fa-brands fa-facebook-messenger"></i> </a>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
