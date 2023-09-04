@@ -9,7 +9,7 @@
   </head>
   <body class="bg-light" style="font-size:23px;">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
+        <div class="container">
             <a class="navbar-brand text-primary mx-2" style="font-size:30px; font-weight:bold;" href="#">Company</a>
             <!-- <a href="" class="btn btn-primary">JobHunt</a> -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
