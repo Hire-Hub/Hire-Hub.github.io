@@ -33,7 +33,7 @@
             </ul>
             <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class=" btn btn-outline-primary" aria-current="page" href="#"><i class="fa fa-right-to-bracket "></i> SignIn</a>
+                        <a class=" btn btn-outline-primary" aria-current="page" href="signup.php"><i class="fa fa-right-to-bracket "></i> SignIn</a>
                     </li>
             </ul>
             </div>
