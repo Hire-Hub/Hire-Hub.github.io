@@ -41,7 +41,7 @@
 
     <!-- job creation -->
     <div class="container my-3" id="job">
-        <form>
+        <form method="post" action="employer.php">
             <div class="form-group">
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="What kind of job or service do you need?" ></textarea>
             </div>

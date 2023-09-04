@@ -33,6 +33,30 @@
         </div>
     </nav>
 
+    <div class="container">
+        <h2 class="text-center my-3" >List of jobs available</h2>
+
+        <ul class="list-group"  >
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <p>Student 1</p>
+                <span class="badge bg-primary rounded-pill">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+            <p>Student 2</p>
+                <span class="badge bg-primary rounded-pill">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+            <p>Student 3</p>
+                <span class="badge bg-primary rounded-pill">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </span>
+            </li>
+        </ul>
+    </div>
 
     <div class="footer mt-2 text-center">
         <footer>
