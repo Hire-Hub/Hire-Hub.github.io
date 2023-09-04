@@ -10,7 +10,7 @@
   <body class="bg-light" >
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand text-primary mx-2" style="font-size:30px; font-weight:bold;" href="#">JobHunt</a>
+            <a class="navbar-brand text-primary mx-2" style="font-size:30px; font-weight:bold;" href="index.php">JobHunt</a>
             <!-- <a href="" class="btn btn-primary">JobHunt</a> -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -18,17 +18,17 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto" id="navbar">
                 <li class="nav-item  mx-1 my-1">
-                    <a href="" class="btn btn-outline-primary"><i class="fa fa-house"></i> Home</a>
+                    <a href="index.php" class="btn btn-outline-primary"><i class="fa fa-house"></i> Home</a>
                 </li>
                 <li class="nav-item mx-1 my-1">
-                    <a href="" class="btn btn-outline-primary"><i class="fa fa-gear"></i> Services</a>
+                    <a href="#service" class="btn btn-outline-primary"><i class="fa fa-gear"></i> Services</a>
                 </li>
                 <li class="nav-item mx-1 my-1">
-                    <a href="" class="btn btn-outline-primary"><i class="fa fa-users"></i> About</a>
+                    <a href="#about" class="btn btn-outline-primary"><i class="fa fa-users"></i> About</a>
                 </li>
             
                 <li class="nav-item mx-1 my-1">
-                    <a href="" class="btn btn-outline-primary"><i class="fa fa-phone"></i> Contact Us</a>
+                    <a href="#contact" class="btn btn-outline-primary"><i class="fa fa-phone"></i> Contact Us</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">
@@ -41,7 +41,7 @@
     </nav>
 
     <!-- services section -->
-    <div class="container">
+    <div class="container" id="service">
             <h2 class="text-center my-2" >Our Services</h2>
             <div class="row">
               <!-- Student Cards -->
@@ -88,7 +88,7 @@
           </div>
 
     <!-- about section -->
-    <div class="container" id="employer-section">
+    <div class="container" id="about">
         <h2 class="text-center my-2">About Us</h2>
       <div class="row p-2">
         <div class="col-md-4" id="image-card">
@@ -106,7 +106,7 @@
     </div>
 
 <!-- contact section -->
-<div class="container border rounded mt-5">
+<div class="container border rounded mt-5" id="contact">
       <div class="text-center">
           <h2>Get in touch</h2>
           <p class="lead">Questions? Do not hesitate to contact us</p>
@@ -115,7 +115,7 @@
           <div class="col-lg-6">
               <form action="">
                   <label for="query" class="text-center">Write a message</label>
-                  <textarea name="query" id="query" cols="30" rows="10" class="form-control mt-3"></textarea>
+                  <textarea name="query" id="query" cols="20" rows="10" class="form-control mt-3"></textarea>
                   <div class="text-center">
                       <button type="submit" class="btn btn-primary my-3 text-white">Send!</button>
                   </div>
@@ -130,6 +130,12 @@
       </div>
   </div>
 
+    
+  <div class="footer mt-2 text-center">
+    <footer>
+        <p> <span id="year"> </span> © JobHunt. All rights reserved</p>
+    </footer>
+  </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>
