@@ -7,7 +7,7 @@
     <title>LogIn</title>
   </head>
   <body>
-    <h1 class="text-center my-3" >Log In</h1>
+    <h1 class="text-center my-3" >Log In Page</h1>
 
     <div class="container">
         <nav>

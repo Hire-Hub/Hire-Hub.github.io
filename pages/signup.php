@@ -7,7 +7,7 @@
     <title>SignUp</title>
   </head>
   <body>
-    <h1 class="text-center my-3" >Sign Up</h1>
+    <h1 class="text-center my-3" >Sign Up Page</h1>
 
     <div class="container">
         <nav>
