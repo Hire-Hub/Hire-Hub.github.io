@@ -41,7 +41,7 @@
             </ul>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item mx-1 my-1">
-                        <a class=" btn btn-outline-primary" aria-current="page" href="#"><i class="fa fa-whatsapp "></i> <?php echo $_SESSION['password'];?></a>
+                        <a class=" btn btn-outline-primary" aria-current="page" href="#"><i class="fa fa-whatsapp "></i> <?php echo $_SESSION['mobile'];?></a>
                 </li>
             </ul>
             </div>
