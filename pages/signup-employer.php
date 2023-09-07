@@ -1,4 +1,7 @@
 <?php
+    $success = 0;
+    $user = 0;
+
     // if form is a post request then connect to database
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         include 'connect.php';
@@ -7,25 +10,28 @@
         $mobile = $_POST['mobile'];
         $password = $_POST['password'];
 
-        // $sql = "insert into `employer` (name,mobile,password) values('$name','$mobile','$password')";
 
-        // $result = mysqli_query($con,$sql);
-        
-        // if ($result) {
-        //     echo "data inserted";
-        // }
-        // else{
-        //     die(mysqli_error($con));
-        // }
-
-        $sql = "Select * from `employer` where username='$name'";
+        $sql = "Select * from `employer` where name='$name'";
 
         $result = mysqli_query($con,$sql);
         if ($result) {
             // count n0 of rows present in database
             $num=mysqli_num_rows($result);
             if ($num>0) {
-                echo "User already exists";
+                // echo "User already exists";
+                $user = 1;
+            }
+            else{
+                $sql = "insert into `employer` (name,mobile,password) values('$name','$mobile','$password')";
+                $result = mysqli_query($con,$sql);
+
+                 if ($result) {
+                    // echo "Signup successful";
+                    $success = 1;
+                }
+                else{
+                    die(mysqli_error($con));
+                }
             }
         }
     }
@@ -41,6 +47,26 @@
     <title>SignUp</title>
   </head>
   <body>
+
+    <?php
+        if ($user) {
+            echo 
+            '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Comrade!</strong> Check your company name again.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';
+        }
+    ?>
+
+    <?php
+        if ($success) {
+            echo 
+            '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Comrade!</strong> Welcome aboard.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';
+        }
+    ?>
     <h1 class="text-center my-3" >Sign Up As Employer</h1>
 
     <div class="container">
@@ -59,7 +85,7 @@
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-key text-primary" ></i></span>
                     <input type="password" class="form-control" name="password" placeholder="enter password">
                 </div>
-                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                    <button type="submit" class="btn btn-primary" name="submit">Sign Up</button>
 
                 <p class="my-2" >Already have an account? <a href="login-employer.php">Click Here</a></p>
             </form>

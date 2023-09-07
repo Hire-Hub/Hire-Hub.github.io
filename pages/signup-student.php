@@ -1,4 +1,7 @@
 <?php
+    $success = 0;
+    $user = 0;
+
     // if form is a post request then connect to database
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         include 'connect.php';
@@ -7,21 +10,30 @@
         $mobile = $_POST['mobile'];
         $password = $_POST['password'];
 
-        // query insert for employer 
-        $sql = "insert into `employer` (name,mobile,password) values('$name','$mobile','$password')";
 
+        $sql = "Select * from `student` where name='$name'";
 
         $result = mysqli_query($con,$sql);
-
-
-        // employer conditional
         if ($result) {
-            echo "data inserted";
-        }
-        else{
-            die(mysqli_error($con));
-        }
+            // count n0 of rows present in database
+            $num=mysqli_num_rows($result);
+            if ($num>0) {
+                // echo "User already exists";
+                $user = 1;
+            }
+            else{
+                $sql = "insert into `student` (name,mobile,password) values('$name','$mobile','$password')";
+                $result = mysqli_query($con,$sql);
 
+                 if ($result) {
+                    // echo "Signup successful";
+                    $success = 1;
+                }
+                else{
+                    die(mysqli_error($con));
+                }
+            }
+        }
     }
 ?>
 
@@ -35,11 +47,31 @@
     <title>SignUp</title>
   </head>
   <body>
+
+  <?php
+        if ($user) {
+            echo 
+            '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Comrade!</strong> Check your company name again.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';
+        }
+    ?>
+
+    <?php
+        if ($success) {
+            echo 
+            '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Comrade!</strong> Welcome aboard.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';
+        }
+    ?>
     <h1 class="text-center my-3" >Sign Up As Student</h1>
 
     <div class="container">
             <!-- student creation -->
-            <form class="my-3" action="signup.php" method="post" >
+            <form class="my-3" action="signup-student.php" method="post" >
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-user text-primary" ></i></span>
                     <input type="text" class="form-control" name="name" aria-describedby="emailHelp" placeholder="enter name">
