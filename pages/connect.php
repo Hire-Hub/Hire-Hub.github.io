@@ -2,7 +2,7 @@
     $HOSTNAME = 'localhost';
     $USERNAME = 'root';
     $PASSWORD = '';
-    $DATABASE = 'signupforms';
+    $DATABASE = 'jobhunt_database';
 
     $con = mysqli_connect($HOSTNAME, $USERNAME, $PASSWORD, $DATABASE);
     if (!$con) {
