@@ -1,7 +1,7 @@
 <?php
-    include 'connect.php';
+    // include 'connect.php';
     session_start();
-    if (!isset($_SESSION['name'])) {
+    if (!isset($_SESSION['studentname'])) {
         header('location:login-student.php');
     }
 
@@ -19,7 +19,7 @@
   <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand text-primary mx-2" style="font-size:30px; font-weight:bold;" href="#"><?php echo $_SESSION['name'];?></a>
+            <a class="navbar-brand text-primary mx-2" style="font-size:30px; font-weight:bold;" href="#"><?php echo $_SESSION['studentname'];?></a>
             <!-- <a href="" class="btn btn-primary">JobHunt</a> -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

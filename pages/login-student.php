@@ -6,11 +6,11 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         include 'connect.php';
 
-        $name = $_POST['name'];
-        $password = $_POST['password'];
+        $studentname = $_POST['studentname'];
+        $studentpassword = $_POST['studentpassword'];
 
 
-        $sql = "Select * from `student` where name='$name' and password='$password'";
+        $sql = "Select * from `student` where studentname='$studentname' and studentpassword='$studentpassword'";
 
         $result = mysqli_query($con,$sql);
         if ($result) {
@@ -20,8 +20,8 @@
                 // echo "Login succesful";
                 $login = 1;
                 session_start();
-                $_SESSION['name']=$name;
-                $_SESSION['password']=$password;
+                $_SESSION['studentname']=$studentname;
+                $_SESSION['studentpassword']=$studentpassword;
                 header('location:student.php');
             }
             else{
@@ -68,11 +68,11 @@
             <form class="my-3" action="login-student.php" method="post" >
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-user text-primary" ></i></span>
-                    <input type="text" class="form-control" name="name" aria-describedby="emailHelp" placeholder="enter name">
+                    <input type="text" class="form-control" name="studentname" aria-describedby="emailHelp" placeholder="enter name">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-key text-primary" ></i></span>
-                    <input type="password" class="form-control" name="password" placeholder="enter password">
+                    <input type="password" class="form-control" name="studentpassword" placeholder="enter password">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Log In</button>
