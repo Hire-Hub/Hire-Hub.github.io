@@ -38,15 +38,7 @@
     <h1 class="text-center my-3" >Sign Up As Employer</h1>
 
     <div class="container">
-        <!-- <nav>
-            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Employer</button>
-                <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Student</button>
-            </div>
-        </nav> -->
-        <div class="tab-content">
             <!-- employer creation -->
-            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
             <form class="my-3" action="signup.php" method="post" >
                 <div class=" input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-user text-primary" ></i></span>
@@ -63,33 +55,9 @@
                 </div>
                     <button type="submit" class="btn btn-primary">Sign Up</button>
 
-                <p class="my-2" >Already have an account? <a href="login.php">Click Here</a></p>
+                <p class="my-2" >Already have an account? <a href="login-employer.php">Click Here</a></p>
             </form>
-            </div>
 
-            <!-- student creation -->
-            <!-- <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-            <form class="my-3" action="signup.php" method="post" >
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-user text-primary" ></i></span>
-                    <input type="text" class="form-control" name="name" aria-describedby="emailHelp" placeholder="enter name">
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-phone text-primary" ></i></span>
-                    <input type="number" class="form-control" name="mobile" placeholder="enter phone number">
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-key text-primary" ></i></span>
-                    <input type="password" class="form-control" name="password" placeholder="enter password">
-                </div>
-
-                <button type="submit" class="btn btn-primary">Sign Up</button>
-              
-                <p class="my-2" >Already have an account? <a href="login.php">Click Here</a></p>
-
-            </form>
-            </div> -->
-        </div>
     </div>
 
 
