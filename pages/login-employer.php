@@ -1,3 +1,37 @@
+<?php
+    $login = 0;
+    $invalid = 0;
+
+    // if form is a post request then connect to database
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        include 'connect.php';
+
+        $name = $_POST['name'];
+        // $password = $_POST['password'];
+        $mobile = $_POST['mobile'];
+
+        // $sql = "Select * from `employer` where name='$name' and password='$password'";
+        $sql = "Select * from `employer` where name='$name' and mobile='$mobile'";
+
+        $result = mysqli_query($con,$sql);
+        if ($result) {
+            // count n0 of rows present in database
+            $num=mysqli_num_rows($result);
+            if ($num>0) {
+                // echo "Login succesful";
+                $login = 1;
+                session_start();
+                $_SESSION['name']=$name;
+                $_SESSION['mobile']=$mobile;
+                header('location:employer.php');
+            }
+            else{
+              //  echo 'invalid data';
+              $invalid = 1;
+            }
+        }
+    }
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,6 +42,25 @@
     <title>LogIn</title>
   </head>
   <body>
+
+   <?php
+        if ($login) {
+            echo 
+            '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Comrade!</strong> You are in.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';
+        }
+    ?>
+      <?php
+        if ($invalid) {
+            echo 
+            '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Comrade!</strong> Thats not you.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';
+        }
+    ?>
     <h1 class="text-center my-3" >Log In As Employer</h1>
 
     <div class="container">
@@ -21,6 +74,10 @@
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-key text-primary" ></i></span>
                     <input type="password" class="form-control" name="password" placeholder="enter password">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-phone text-primary" ></i></span>
+                    <input type="number" class="form-control" name="mobile" placeholder="enter number">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Log In</button>

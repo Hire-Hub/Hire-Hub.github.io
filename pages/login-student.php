@@ -1,3 +1,37 @@
+<?php
+    $login = 0;
+    $invalid = 0;
+
+    // if form is a post request then connect to database
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        include 'connect.php';
+
+        $studentname = $_POST['studentname'];
+        $studentpassword = $_POST['studentpassword'];
+
+
+        $sql = "Select * from `student` where studentname='$studentname' and studentpassword='$studentpassword'";
+
+        $result = mysqli_query($con,$sql);
+        if ($result) {
+            // count n0 of rows present in database
+            $num=mysqli_num_rows($result);
+            if ($num>0) {
+                // echo "Login succesful";
+                $login = 1;
+                session_start();
+                $_SESSION['studentname']=$studentname;
+                $_SESSION['studentpassword']=$studentpassword;
+                header('location:student.php');
+            }
+            else{
+              //  echo 'invalid data';
+              $invalid = 1;
+            }
+        }
+    }
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,6 +42,25 @@
     <title>LogIn</title>
   </head>
   <body>
+
+  <?php
+        if ($login) {
+            echo 
+            '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Comrade!</strong> You are in.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';
+        }
+    ?>
+      <?php
+        if ($invalid) {
+            echo 
+            '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Comrade!</strong> Thats not you.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';
+        }
+    ?>
     <h1 class="text-center my-3" >Log In As Student</h1>
 
     <div class="container">
@@ -15,11 +68,11 @@
             <form class="my-3" action="login-student.php" method="post" >
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-user text-primary" ></i></span>
-                    <input type="text" class="form-control" name="name" aria-describedby="emailHelp" placeholder="enter name">
+                    <input type="text" class="form-control" name="studentname" aria-describedby="emailHelp" placeholder="enter name">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-key text-primary" ></i></span>
-                    <input type="password" class="form-control" name="password" placeholder="enter password">
+                    <input type="password" class="form-control" name="studentpassword" placeholder="enter password">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Log In</button>

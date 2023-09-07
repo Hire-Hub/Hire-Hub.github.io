@@ -6,12 +6,12 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         include 'connect.php';
 
-        $name = $_POST['name'];
-        $mobile = $_POST['mobile'];
-        $password = $_POST['password'];
+        $studentname = $_POST['studentname'];
+        $studentmobile = $_POST['studentmobile'];
+        $studentpassword = $_POST['studentpassword'];
 
 
-        $sql = "Select * from `student` where name='$name'";
+        $sql = "Select * from `student` where studentname='$studentname'";
 
         $result = mysqli_query($con,$sql);
         if ($result) {
@@ -22,7 +22,8 @@
                 $user = 1;
             }
             else{
-                $sql = "insert into `student` (name,mobile,password) values('$name','$mobile','$password')";
+                $sql = "insert into `student` (studentname,studentmobile,studentpassword) 
+                values('$studentname','$studentmobile','$studentpassword')";
                 $result = mysqli_query($con,$sql);
 
                  if ($result) {
@@ -74,15 +75,15 @@
             <form class="my-3" action="signup-student.php" method="post" >
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-user text-primary" ></i></span>
-                    <input type="text" class="form-control" name="name" aria-describedby="emailHelp" placeholder="enter name">
+                    <input type="text" class="form-control" name="studentname" aria-describedby="emailHelp" placeholder="enter name">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-phone text-primary" ></i></span>
-                    <input type="number" class="form-control" name="mobile" placeholder="enter phone number">
+                    <input type="number" class="form-control" name="studentmobile" placeholder="enter phone number">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-key text-primary" ></i></span>
-                    <input type="password" class="form-control" name="password" placeholder="enter password">
+                    <input type="password" class="form-control" name="studentpassword" placeholder="enter password">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Sign Up</button>

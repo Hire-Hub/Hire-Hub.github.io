@@ -1,3 +1,12 @@
+<?php
+    include 'connect.php';
+    session_start();
+    if (!isset($_SESSION['name'])) {
+        header('location:login-employer.php');
+    }
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,7 +19,7 @@
   <body class="bg-light" style="font-size:23px;">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand text-primary mx-2" style="font-size:30px; font-weight:bold;" href="#">Company</a>
+            <a class="navbar-brand text-primary mx-2" style="font-size:30px; font-weight:bold;" href="#"><?php echo $_SESSION['name'];?></a>
             <!-- <a href="" class="btn btn-primary">JobHunt</a> -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -27,12 +36,12 @@
                     <a href="#about" class="btn btn-outline-primary"><i class="fa fa-users"></i> About</a>
                 </li>
                 <li class="nav-item mx-1 my-1">
-                        <a class=" btn btn-outline-primary" aria-current="page" href="#"><i class="fa fa-right-to-bracket "></i> Logout</a>
+                        <a class=" btn btn-outline-primary" aria-current="page" href="logout.php"><i class="fa fa-right-to-bracket "></i> Logout</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item mx-1 my-1">
-                        <a class=" btn btn-outline-primary" aria-current="page" href="#"><i class="fa fa-whatsapp "></i> Contact</a>
+                        <a class=" btn btn-outline-primary" aria-current="page" href="#"><i class="fa fa-whatsapp "></i> <?php echo $_SESSION['mobile'];?></a>
                 </li>
             </ul>
             </div>
@@ -91,6 +100,11 @@
             </div>
         </div>
     </section>
+
+    <!-- <h1>Welcome 
+    
+    </h1> -->
+   
 
     <div class="footer mt-2 text-center">
         <footer>
