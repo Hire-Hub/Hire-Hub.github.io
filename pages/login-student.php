@@ -12,7 +12,6 @@
 
     <div class="container">
             <!-- student login -->
-            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
             <form class="my-3" action="login-student.php" method="post" >
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-user text-primary" ></i></span>
@@ -27,7 +26,6 @@
                 <p class="my-2" >Don't have an account? <a href="signup-student.php">Click Here</a></p>
 
             </form>
-            </div>
     </div>
 
 

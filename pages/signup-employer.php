@@ -7,21 +7,27 @@
         $mobile = $_POST['mobile'];
         $password = $_POST['password'];
 
-        // query insert for employer 
-        $sql = "insert into `employer` (name,mobile,password) values('$name','$mobile','$password')";
+        // $sql = "insert into `employer` (name,mobile,password) values('$name','$mobile','$password')";
 
+        // $result = mysqli_query($con,$sql);
+        
+        // if ($result) {
+        //     echo "data inserted";
+        // }
+        // else{
+        //     die(mysqli_error($con));
+        // }
+
+        $sql = "Select * from `employer` where username='$name'";
 
         $result = mysqli_query($con,$sql);
-
-
-        // employer conditional
         if ($result) {
-            echo "data inserted";
+            // count n0 of rows present in database
+            $num=mysqli_num_rows($result);
+            if ($num>0) {
+                echo "User already exists";
+            }
         }
-        else{
-            die(mysqli_error($con));
-        }
-
     }
 ?>
 
@@ -39,7 +45,7 @@
 
     <div class="container">
             <!-- employer creation -->
-            <form class="my-3" action="signup.php" method="post" >
+            <form class="my-3" action="signup-employer.php" method="post" >
                 <div class=" input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-user text-primary" ></i></span>
                     <!-- <label for="name" class="form-label">Company Name</label> -->
