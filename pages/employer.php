@@ -5,6 +5,22 @@
         header('location:login-employer.php');
     }
 
+   
+?>
+
+<?php
+     if (isset($_POST['submit'])) {
+        $description = $_POST['description'];
+
+        $sql = "INSERT INTO `job` (description) VALUES('$description')";
+        $result = mysqli_query($con,$sql);
+        if ($result) {
+            echo 'created post successfully';
+        }
+        else{
+            die(mysqli_error($con));
+        }
+    }
 ?>
 
 <!doctype html>
@@ -52,9 +68,9 @@
     <div class="container my-3" id="job">
         <form method="post" action="employer.php">
             <div class="form-group">
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="What kind of job or service do you need?" ></textarea>
+                <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3" placeholder="What kind of job or service do you need?" ></textarea>
             </div>
-            <button type="submit" class="btn btn-primary my-3"><i class="fa-solid fa-paper-plane"></i>  Create Post</button>
+            <button type="submit" name="submit" class="btn btn-primary my-3"><i class="fa-solid fa-paper-plane"></i>  Create Post</button>
         </form>
     </div>
 
