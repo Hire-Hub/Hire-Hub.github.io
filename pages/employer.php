@@ -36,7 +36,7 @@
                     <a href="#about" class="btn btn-outline-primary"><i class="fa fa-users"></i> About</a>
                 </li>
                 <li class="nav-item mx-1 my-1">
-                        <a class=" btn btn-outline-primary" aria-current="page" href="#"><i class="fa fa-right-to-bracket "></i> Logout</a>
+                        <a class=" btn btn-outline-primary" aria-current="page" href="logout.php"><i class="fa fa-right-to-bracket "></i> Logout</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">
