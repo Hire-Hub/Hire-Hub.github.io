@@ -19,6 +19,10 @@
             if ($num>0) {
                 // echo "Login succesful";
                 $login = 1;
+                session_start();
+                $_SESSION['name']=$name;
+                $_SESSION['password']=$password;
+                header('location:employer.php');
             }
             else{
               //  echo 'invalid data';
