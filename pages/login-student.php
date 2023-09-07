@@ -1,3 +1,33 @@
+<?php
+    $login = 0;
+    $invalid = 0;
+
+    // if form is a post request then connect to database
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        include 'connect.php';
+
+        $name = $_POST['name'];
+        $password = $_POST['password'];
+
+
+        $sql = "Select * from `student` where name='$name' and password='$password'";
+
+        $result = mysqli_query($con,$sql);
+        if ($result) {
+            // count n0 of rows present in database
+            $num=mysqli_num_rows($result);
+            if ($num>0) {
+                // echo "Login succesful";
+                $login = 1;
+            }
+            else{
+              //  echo 'invalid data';
+              $invalid = 1;
+            }
+        }
+    }
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,6 +38,25 @@
     <title>LogIn</title>
   </head>
   <body>
+
+  <?php
+        if ($login) {
+            echo 
+            '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Comrade!</strong> You are in.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';
+        }
+    ?>
+      <?php
+        if ($invalid) {
+            echo 
+            '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Comrade!</strong> Thats not you.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';
+        }
+    ?>
     <h1 class="text-center my-3" >Log In As Student</h1>
 
     <div class="container">
