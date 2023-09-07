@@ -7,10 +7,11 @@
         include 'connect.php';
 
         $name = $_POST['name'];
-        $password = $_POST['password'];
+        // $password = $_POST['password'];
+        $mobile = $_POST['mobile'];
 
-
-        $sql = "Select * from `employer` where name='$name' and password='$password'";
+        // $sql = "Select * from `employer` where name='$name' and password='$password'";
+        $sql = "Select * from `employer` where name='$name' and mobile='$mobile'";
 
         $result = mysqli_query($con,$sql);
         if ($result) {
@@ -21,7 +22,7 @@
                 $login = 1;
                 session_start();
                 $_SESSION['name']=$name;
-                $_SESSION['password']=$password;
+                $_SESSION['mobile']=$mobile;
                 header('location:employer.php');
             }
             else{
@@ -73,6 +74,10 @@
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-key text-primary" ></i></span>
                     <input type="password" class="form-control" name="password" placeholder="enter password">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-phone text-primary" ></i></span>
+                    <input type="number" class="form-control" name="mobile" placeholder="enter number">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Log In</button>

@@ -1,3 +1,12 @@
+<?php
+    include 'connect.php';
+    session_start();
+    if (!isset($_SESSION['name'])) {
+        header('location:login-student.php');
+    }
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,7 +19,7 @@
   <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand text-primary mx-2" style="font-size:30px; font-weight:bold;" href="#">Student</a>
+            <a class="navbar-brand text-primary mx-2" style="font-size:30px; font-weight:bold;" href="#"><?php echo $_SESSION['name'];?></a>
             <!-- <a href="" class="btn btn-primary">JobHunt</a> -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -38,19 +47,19 @@
 
         <ul class="list-group"  >
             <li class="list-group-item d-flex justify-content-between align-items-center">
-                <p>Student 1</p>
+                <p>Job 1</p>
                 <span class="badge bg-primary rounded-pill">
                     <i class="fa-brands fa-whatsapp"></i>
                 </span>
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center">
-            <p>Student 2</p>
+            <p>Job 2</p>
                 <span class="badge bg-primary rounded-pill">
                     <i class="fa-brands fa-whatsapp"></i>
                 </span>
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center">
-            <p>Student 3</p>
+            <p>Job 3</p>
                 <span class="badge bg-primary rounded-pill">
                     <i class="fa-brands fa-whatsapp"></i>
                 </span>
