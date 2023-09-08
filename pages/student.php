@@ -1,5 +1,5 @@
 <?php
-    // include 'connect.php';
+    include 'connect.php';
     session_start();
     if (!isset($_SESSION['studentname'])) {
         header('location:login-student.php');
@@ -46,24 +46,65 @@
         <h2 class="text-center my-3" >List of jobs available</h2>
 
         <ul class="list-group"  >
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                <p>Job 1</p>
-                <span class="badge bg-primary rounded-pill">
+            
+              <?php
+                $sql = "Select * from `job`";
+                $result = mysqli_query($con,$sql);
+
+                if ($result) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $description = $row['description'];
+
+                        echo
+                        '
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <p>'.$description.'</p>
+                        </li>
+                        ';
+                    }
+                  
+                }
+            ?>
+            <?php
+                $sql = "Select * from `employer`";
+                $result = mysqli_query($con,$sql);
+
+                if ($result) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $mobile = $row['mobile'];
+
+                        echo
+                        '
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span class="badge bg-primary rounded-pill">
+                                <i class="fa-brands fa-whatsapp">'.$mobile.'</i>
+                            </span>
+                        </li>
+                        ';
+                    }
+                  
+                }
+            ?>
+            <h1>
+            </h1>
+                <!-- <li class="list-group-item d-flex justify-content-between align-items-center">
+                 <p>Job 1</p>
+                 <span class="badge bg-primary rounded-pill">
                     <i class="fa-brands fa-whatsapp"></i>
-                </span>
+                </span> -->
             </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
+            <!-- <li class="list-group-item d-flex justify-content-between align-items-center">
             <p>Job 2</p>
                 <span class="badge bg-primary rounded-pill">
                     <i class="fa-brands fa-whatsapp"></i>
                 </span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
+            </li> -->
+            <!-- <li class="list-group-item d-flex justify-content-between align-items-center">
             <p>Job 3</p>
                 <span class="badge bg-primary rounded-pill">
                     <i class="fa-brands fa-whatsapp"></i>
                 </span>
-            </li>
+            </li> -->
         </ul>
     </div>
 
