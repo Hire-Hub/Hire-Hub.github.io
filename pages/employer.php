@@ -9,18 +9,25 @@
 ?>
 
 <?php
+
+    $job = 0;
      if (isset($_POST['submit'])) {
         $description = $_POST['description'];
 
         $sql = "INSERT INTO `job` (description) VALUES('$description')";
         $result = mysqli_query($con,$sql);
         if ($result) {
-            echo 'created post successfully';
+            // echo 'created post successfully';
+            $job = 1;
         }
         else{
             die(mysqli_error($con));
         }
     }
+?>
+
+<?php
+    $sql2 = "Select * from `employer` where "
 ?>
 
 <!doctype html>
@@ -33,6 +40,15 @@
     <title>Employer</title>
   </head>
   <body class="bg-light" style="font-size:23px;">
+  <?php
+        if ($job) {
+            echo 
+            '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Congrats!</strong> the job is created.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';
+        }
+    ?>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand text-primary mx-2" style="font-size:30px; font-weight:bold;" href="#"><?php echo $_SESSION['name'];?></a>

@@ -46,7 +46,8 @@
         <h2 class="text-center my-3" >List of jobs available</h2>
 
         <ul class="list-group"  >
-            <?php
+            
+              <?php
                 $sql = "Select * from `job`";
                 $result = mysqli_query($con,$sql);
 
@@ -58,8 +59,25 @@
                         '
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <p>'.$description.'</p>
+                        </li>
+                        ';
+                    }
+                  
+                }
+            ?>
+            <?php
+                $sql = "Select * from `employer`";
+                $result = mysqli_query($con,$sql);
+
+                if ($result) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $mobile = $row['mobile'];
+
+                        echo
+                        '
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
                             <span class="badge bg-primary rounded-pill">
-                                <i class="fa-brands fa-whatsapp"></i>
+                                <i class="fa-brands fa-whatsapp">'.$mobile.'</i>
                             </span>
                         </li>
                         ';
@@ -67,6 +85,8 @@
                   
                 }
             ?>
+            <h1>
+            </h1>
                 <!-- <li class="list-group-item d-flex justify-content-between align-items-center">
                  <p>Job 1</p>
                  <span class="badge bg-primary rounded-pill">
